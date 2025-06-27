@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # API and ETL Watcher service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/healthcare.db
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_DEBUG=False
+      - DATA_RAW_PATH=/app/data/raw
+      - DATA_CLEANED_PATH=/app/data/cleaned
+      - ETL_WATCH_INTERVAL=5
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+
+  # Dashboard service
+  dashboard:
+    build:
+      context: ./client/medoptix-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DASHBOARD_API_URL=http://api:8000
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  data:
+
+networks:
+  default:
+    name: medoptix-network

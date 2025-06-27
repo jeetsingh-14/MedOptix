@@ -1,0 +1,72 @@
+================================================================================
+HEALTHCARE DATA ANALYSIS SUMMARY REPORT
+Generated on: 2025-06-26 18:18:32
+================================================================================
+
+SECTION 1: A/B TESTING RESULTS
+--------------------------------------------------------------------------------
+Wait Time Analysis:
+  Group A Mean: 17.58 minutes
+  Group B Mean: 17.68 minutes
+  Difference: -0.10 minutes
+  Statistical Test: Welch's t-test
+  p-value: 0.8005
+  Significant Difference: False
+
+Satisfaction Score Analysis:
+  Group A Mean: 8.55
+  Group B Mean: 8.53
+  Difference: 0.03
+  Statistical Test: Mann-Whitney U test
+  p-value: 0.7931
+  Significant Difference: False
+
+No-show Rate Analysis:
+  Group A Rate: 5.77%
+  Group B Rate: 6.23%
+  Difference: -0.46%
+  Statistical Test: Chi-square test
+  p-value: 0.4503
+  Significant Difference: False
+
+
+SECTION 2: DEPARTMENT-LEVEL INSIGHTS
+--------------------------------------------------------------------------------
+Average Daily Patients by Department:
+  Pediatrics: 64.1 patients
+  Cardiology: 56.6 patients
+  Orthopedics: 47.2 patients
+  Neurology: 36.0 patients
+
+Average Staff-to-Patient Ratio by Department:
+  Neurology: 0.84
+  Orthopedics: 0.65
+  Cardiology: 0.54
+  Pediatrics: 0.45
+
+Average Equipment Downtime by Department:
+  Pediatrics: 0.96 hours
+  Cardiology: 0.96 hours
+  Neurology: 0.92 hours
+  Orthopedics: 0.87 hours
+
+SECTION 3: CORRELATION ANALYSIS
+--------------------------------------------------------------------------------
+Correlation between Wait Time and Satisfaction:
+  Pearson correlation: -0.88
+  p-value: 0.0000
+  Significant: True
+
+Correlation between Staff Count and Patients Seen:
+  Pearson correlation: 0.04
+  p-value: 0.4476
+  Significant: False
+
+Correlation between Average Service Time and No-show Rate:
+  Pearson correlation: -0.02
+  p-value: 0.6669
+  Significant: False
+
+================================================================================
+END OF REPORT
+================================================================================
